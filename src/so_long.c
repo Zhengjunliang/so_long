@@ -88,7 +88,7 @@ int	main(int argc, char **argv)
 	{
 		data.count = 0;
 		data.mlx_ptr = mlx_init();
-		set_content(&(data.content));
+		set_content(&data);
 		data.map = map_core(argv, &data);
 		if (data.map != NULL)
 		{

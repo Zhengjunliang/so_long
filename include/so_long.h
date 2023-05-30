@@ -24,6 +24,18 @@
 # include <X11/keysym.h>
 # include <X11/X.h>
 
+typedef struct s_enemy
+{
+	int	x_e;
+	int	y_e;
+	int	sign;
+	int	x;
+	int	path_to_move;
+	int	sleep;
+	int	sleep_for_move;
+	char	*imgs[5];
+}		t_enemy_vars;
+
 typedef struct s_img
 {
 	void	*img_floor;
@@ -65,6 +77,7 @@ typedef struct s_data
 	int		width;
 	int		height;
 	char	**map;
+	t_enemy_vars	e_vars;
 	t_cnt	content;
 	t_img	img;
 	t_pos	pos;
@@ -83,7 +96,7 @@ int		ft_check_col(char *map_line, char wall, t_data *data);
 int		ft_check_other(char *map_line, t_cnt *content);
 
 void	set_img(t_data *data);
-void	set_content(t_cnt *content);
+void	set_content(t_data *data);
 
 void	core_render(t_data *data);
 void	render_top(t_data *data);

@@ -49,7 +49,7 @@ clean:
 	$(RM) $(OBJS)
 
 fclean:		clean
-	$(RM) $(NAME) $(LIBFT)
+	$(RM) $(NAME) $(LIBFT) $(PRINTF_LBT)
 
 re:			fclean all
 
